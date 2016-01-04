@@ -11,9 +11,7 @@ import XCTest
 
 class rummikubTests: XCTestCase {
   
-  
   let t = TestTiles()
-  
   
   override func setUp() {
     super.setUp()
@@ -25,13 +23,7 @@ class rummikubTests: XCTestCase {
     super.tearDown()
   }
   
-  func testExample() {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-  }
-  
   func testCreatePile() {
-    
     
     var rack = Rack(tiles:[])
     var pile = Pile.createPile()
@@ -61,33 +53,31 @@ class rummikubTests: XCTestCase {
     
   }
   
-  
   func testTileStrategyFindGroups(){
     
     let strategy = BasicStrategy()
     
-    let play1 = TileGroupPlay(groups:strategy.findGroups(t.threesGroupOf4))
+    let tile = [Tile(id: 1000, color: .Red, value: 10)]
+    let play1 = TileGroupPlay(groups:strategy.findGroups(t.threesGroupOf4 + tile))
     XCTAssertEqual(play1.score, 12, "play is worth 12 points")
     XCTAssertEqual(play1.totalTiles, 4, "play shoul have 4 tiles")
     
     let tiles2 = t.threesGroupOf4 + t.foursGroupOf3
-    let play2 = TileGroupPlay(groups:strategy.findGroups(tiles2))
+    let play2 = TileGroupPlay(groups:strategy.findGroups(tiles2 + tile))
     XCTAssertEqual(play2.score, 24, "play is worth 24 points")
     XCTAssertEqual(play2.totalTiles, 7, "play shoul have 8 tiles")
     
   }
 
-  
   func testTileStrategyFilterInvalidGroups(){
     
     let strategy = BasicStrategy()
     
     let tiles = t.onesGroupOf4_invalid_two_red_tiles
     let play = TileGroupPlay(groups:strategy.findGroups(tiles))
-    XCTAssertEqual(play.score, 12, "play is worth 12 points")
-    XCTAssertEqual(play.totalTiles, 4, "play shoul have 4 tiles")
-    
-    
+    XCTAssertEqual(play.score, 3, "play is worth 3 points")
+    XCTAssertEqual(play.totalTiles, 3, "play shoul have 3 tiles")
+  
   }
   
 }

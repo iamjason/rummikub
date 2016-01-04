@@ -12,61 +12,58 @@ protocol Strategy {
   func findGroups(tiles:[Tile]) -> [TileGroup]
 }
 
-
+/**
+ The 'Basic' strategy is to play the max number of tiles each play.
+ This approach doesn't take into account the possiblility of bigger future moves.
+ i.e. maybe i should hold onto a piece in the set for my run later
+ */
 class BasicStrategy : Strategy {
   
-  //
-  struct GroupCounter {
-    var count:Int = 0
-    var tiles:[Tile]
-  }
-  
-
-  
-  //
+  /**
+   
+   @return An array of Playable 'TileGroup'
+   
+   */
   func findGroups(tiles:[Tile]) -> [TileGroup] {
     
-    var numbersCount = [GroupCounter](count: 12, repeatedValue: GroupCounter(count: 0, tiles:[]))
+    var tileGroups = [TileGroup](count: 12, repeatedValue: TileGroup(tiles:[]))
     
+    // count all the values and add tiles to tile group
     for tile in tiles {
-      
-      var counter = numbersCount[tile.value]
-      counter.count = counter.count + 1
+      var counter = tileGroups[tile.value]
       counter.tiles.append(tile)
-      numbersCount[tile.value] = counter
-      
+      tileGroups[tile.value] = counter
     }
     
-    let results = numbersCount
+    return tileGroups
       // groups of three or larger
       .filter { (counter) in
         counter.tiles.count >= 3
       }
-      // filter out groups that have more than one of the same color
-      //      .filter { (counter) -> Bool in
-      //        if let tile = counter.tiles.first {
-      //          let color = tile.color
-      //          return counter.tiles.filter({ (tile) -> Bool in
-      //            tile.color == color
-      //          }).count < 2
-      //        }
-      //        return false
-      //    }
-      
-      // map to the return type
-      .map { (counter) in
-        TileGroup(tiles:counter.tiles)
+      // check all groups contain MAX one of each color
+      .map { (counter) -> TileGroup in
+        
+        if let tile = counter.tiles.first {
+          let color = tile.color
+          let colorsTile = counter.tiles.filter({ (tile) -> Bool in
+            tile.color == color
+          })
+          
+          if colorsTile.count > 1 {
+            // TODO: for now... just remove the first element, let's assume we have a sorted array?
+            // eventually take max value tile
+            if let duplicateColor = colorsTile.first {
+              var tmpCounter = counter
+              tmpCounter.removeTile(duplicateColor)
+              return tmpCounter
+            }
+          }
+        }
+        
+        return counter
+        
     }
- 
     
-    
-    for counter in results {
-      print("-- found: \(counter)")
-    }
-    
-    return results.map { (counter) in
-      TileGroup(tiles:counter.tiles)
-    }
   }
   
 }
