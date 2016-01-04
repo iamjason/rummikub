@@ -9,17 +9,17 @@
 import XCTest
 
 class CombinationsTests: XCTestCase {
-
-    func testCombinationsWithSizeSimpleIntegerCase() {
-      
-      let array = [1,2,3]
-      let result = combinationsOfSize(array, k: 2)
-      
-      let expectedResult = [[1,2], [1,3], [2,3]]
-      XCTAssertEqual(result, expectedResult, "These should match :)")
-      
-    }
-
+  
+  func testCombinationsWithSizeSimpleIntegerCase() {
+    
+    let array = [1,2,3]
+    let result = combinationsOfSize(array, k: 2)
+    
+    let expectedResult = [[1,2], [1,3], [2,3]]
+    XCTAssertEqual(result, expectedResult, "These should match :)")
+    
+  }
+  
   
   func testAllCombinationsSimpleIntegerCase() {
     
@@ -30,5 +30,5 @@ class CombinationsTests: XCTestCase {
     XCTAssertEqual(result, expectedResult, "These should match :)")
     
   }
-
+  
 }

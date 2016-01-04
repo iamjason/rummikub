@@ -8,27 +8,25 @@
 
 import Foundation
 
-/**
+/** TODO: cite source of this... I think rosetta code?
  
-// TODO: cite source of this... I think rosetta code?
+ Find combinations of an array of type 'T' and size 'k'
+ e.g. combinations([1,2,3]) -> [[1, 2], [1, 3], [2, 3]]
  
-Find combinations of an array of type 'T' and size 'k'
-e.g. combinations([1,2,3]) -> [[1, 2], [1, 3], [2, 3]]
-
-*/
-func combinationsOfSize<T>(var arr: Array<T>, k: Int) -> Array<Array<T>> {
+ */
+func combinationsOfSize<T>(var arr: [T], k: Int) -> [[T]] {
   
-  func sliceArray<T>(var arr: Array<T>, x1: Int, x2: Int) -> Array<T> {
-    var tt: Array<T> = []
+  func sliceArray<T>(var arr: [T], x1: Int, x2: Int) ->[T] {
+    var tt: [T] = []
     for var ii = x1; ii <= x2; ++ii {
       tt.append(arr[ii])
     }
     return tt
   }
   
-  var ret: Array<Array<T>> = []
-  var sub: Array<Array<T>> = []
-  var next: Array<T> = []
+  var ret = [[T]]()
+  var sub = [[T]]()
+  var next = [T]()
   
   for var i = 0; i < arr.count; ++i {
     if(k == 1){
@@ -53,11 +51,11 @@ func combinationsOfSize<T>(var arr: Array<T>, k: Int) -> Array<Array<T>> {
  e.g. combinations([1,2,3]) -> [[1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]
  
  */
-func combinations<T>(objects:Array<T>) -> [Array<T>] {
-    var ret = [[T]]()
-    for var i = 1; i <= objects.count; i++ {
-      let combos = combinationsOfSize(objects, k: i)
-      ret = ret + combos
-    }
-    return ret
+func combinations<T>(objects:[T]) -> [[T]] {
+  var ret = [[T]]()
+  for var i = 1; i <= objects.count; i++ {
+    let combos = combinationsOfSize(objects, k: i)
+    ret = ret + combos
+  }
+  return ret
 }
