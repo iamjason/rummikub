@@ -12,6 +12,10 @@
 		460B133D1C3A083F00E52783 /* Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B133A1C3A083F00E52783 /* Combinations.swift */; };
 		460B13401C3A08E200E52783 /* CombinationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B133F1C3A08E200E52783 /* CombinationsTests.swift */; };
 		460B13421C3A132600E52783 /* BasicStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13411C3A132600E52783 /* BasicStrategyTests.swift */; };
+		460B13441C3B296600E52783 /* Runs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13431C3B296600E52783 /* Runs.swift */; };
+		460B13451C3B296600E52783 /* Runs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13431C3B296600E52783 /* Runs.swift */; };
+		460B13461C3B296600E52783 /* Runs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13431C3B296600E52783 /* Runs.swift */; };
+		460B13481C3B298B00E52783 /* RunsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13471C3B298B00E52783 /* RunsTests.swift */; };
 		462D06DB1C387C9C001C1D98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D06DA1C387C9C001C1D98 /* AppDelegate.swift */; };
 		462D06DD1C387C9C001C1D98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D06DC1C387C9C001C1D98 /* ViewController.swift */; };
 		462D06E01C387C9C001C1D98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462D06DE1C387C9C001C1D98 /* Main.storyboard */; };
@@ -65,6 +69,8 @@
 		460B133A1C3A083F00E52783 /* Combinations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Combinations.swift; path = source/utilities/Combinations.swift; sourceTree = "<group>"; };
 		460B133F1C3A08E200E52783 /* CombinationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationsTests.swift; sourceTree = "<group>"; };
 		460B13411C3A132600E52783 /* BasicStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicStrategyTests.swift; sourceTree = "<group>"; };
+		460B13431C3B296600E52783 /* Runs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runs.swift; path = source/utilities/Runs.swift; sourceTree = "<group>"; };
+		460B13471C3B298B00E52783 /* RunsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunsTests.swift; sourceTree = "<group>"; };
 		462D06D71C387C9C001C1D98 /* rummikub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rummikub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462D06DA1C387C9C001C1D98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		462D06DC1C387C9C001C1D98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 			children = (
 				462D07161C38B0B5001C1D98 /* GameManager.swift */,
 				460B133A1C3A083F00E52783 /* Combinations.swift */,
+				460B13431C3B296600E52783 /* Runs.swift */,
 			);
 			name = utilties;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 				462D06EF1C387C9C001C1D98 /* rummikubTests.swift */,
 				460B133F1C3A08E200E52783 /* CombinationsTests.swift */,
 				462D06F11C387C9C001C1D98 /* Info.plist */,
+				460B13471C3B298B00E52783 /* RunsTests.swift */,
 			);
 			path = rummikubTests;
 			sourceTree = "<group>";
@@ -333,6 +341,7 @@
 				462D06DD1C387C9C001C1D98 /* ViewController.swift in Sources */,
 				462D07171C38B0B5001C1D98 /* GameManager.swift in Sources */,
 				462D071B1C38E734001C1D98 /* TileGroup.swift in Sources */,
+				460B13441C3B296600E52783 /* Runs.swift in Sources */,
 				462D07091C388011001C1D98 /* Rack.swift in Sources */,
 				462D06DB1C387C9C001C1D98 /* AppDelegate.swift in Sources */,
 				462D07231C39DD36001C1D98 /* Strategy.swift in Sources */,
@@ -350,7 +359,9 @@
 				462D07201C39DA76001C1D98 /* TileGroupPlay.swift in Sources */,
 				462D070E1C388D37001C1D98 /* Tile.swift in Sources */,
 				462D071C1C38E734001C1D98 /* TileGroup.swift in Sources */,
+				460B13451C3B296600E52783 /* Runs.swift in Sources */,
 				4634F1271C39EDCE00E067D8 /* TestTiles.swift in Sources */,
+				460B13481C3B298B00E52783 /* RunsTests.swift in Sources */,
 				462D070A1C388011001C1D98 /* Rack.swift in Sources */,
 				462D07241C39DD36001C1D98 /* Strategy.swift in Sources */,
 				462D06F01C387C9C001C1D98 /* rummikubTests.swift in Sources */,
@@ -369,6 +380,7 @@
 				462D07211C39DA76001C1D98 /* TileGroupPlay.swift in Sources */,
 				462D070F1C388D37001C1D98 /* Tile.swift in Sources */,
 				462D071D1C38E734001C1D98 /* TileGroup.swift in Sources */,
+				460B13461C3B296600E52783 /* Runs.swift in Sources */,
 				4634F1281C39EDCE00E067D8 /* TestTiles.swift in Sources */,
 				462D070B1C388011001C1D98 /* Rack.swift in Sources */,
 				462D07251C39DD36001C1D98 /* Strategy.swift in Sources */,
