@@ -8,9 +8,6 @@
 
 import Foundation
 
-//typealias PileTile = (pile:Pile, tile:Tile)
-//typealias RackTile = (rack:Rack, tile:Tile)
-
 struct Rack : CustomStringConvertible {
   var tiles:[Tile]
   var description: String  {

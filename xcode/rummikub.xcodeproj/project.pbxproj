@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460B133B1C3A083F00E52783 /* Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B133A1C3A083F00E52783 /* Combinations.swift */; };
+		460B133C1C3A083F00E52783 /* Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B133A1C3A083F00E52783 /* Combinations.swift */; };
+		460B133D1C3A083F00E52783 /* Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B133A1C3A083F00E52783 /* Combinations.swift */; };
+		460B13401C3A08E200E52783 /* CombinationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B133F1C3A08E200E52783 /* CombinationsTests.swift */; };
 		462D06DB1C387C9C001C1D98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D06DA1C387C9C001C1D98 /* AppDelegate.swift */; };
 		462D06DD1C387C9C001C1D98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D06DC1C387C9C001C1D98 /* ViewController.swift */; };
 		462D06E01C387C9C001C1D98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462D06DE1C387C9C001C1D98 /* Main.storyboard */; };
@@ -57,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		460B133A1C3A083F00E52783 /* Combinations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Combinations.swift; path = source/utilities/Combinations.swift; sourceTree = "<group>"; };
+		460B133F1C3A08E200E52783 /* CombinationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationsTests.swift; sourceTree = "<group>"; };
 		462D06D71C387C9C001C1D98 /* rummikub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rummikub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462D06DA1C387C9C001C1D98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		462D06DC1C387C9C001C1D98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		460B133E1C3A084A00E52783 /* utilties */ = {
+			isa = PBXGroup;
+			children = (
+				460B133A1C3A083F00E52783 /* Combinations.swift */,
+			);
+			name = utilties;
+			sourceTree = "<group>";
+		};
 		462D06CE1C387C9C001C1D98 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				462D07161C38B0B5001C1D98 /* GameManager.swift */,
+				460B133E1C3A084A00E52783 /* utilties */,
 				462D07151C38B083001C1D98 /* controllers */,
 				462D07101C38B049001C1D98 /* models */,
 				462D06DA1C387C9C001C1D98 /* AppDelegate.swift */,
@@ -146,6 +161,7 @@
 			children = (
 				4634F1261C39EDCE00E067D8 /* TestTiles.swift */,
 				462D06EF1C387C9C001C1D98 /* rummikubTests.swift */,
+				460B133F1C3A08E200E52783 /* CombinationsTests.swift */,
 				462D06F11C387C9C001C1D98 /* Info.plist */,
 			);
 			path = rummikubTests;
@@ -320,6 +336,7 @@
 				462D07121C38B05B001C1D98 /* Pile.swift in Sources */,
 				462D070D1C388D37001C1D98 /* Tile.swift in Sources */,
 				462D071F1C39DA76001C1D98 /* TileGroupPlay.swift in Sources */,
+				460B133B1C3A083F00E52783 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +353,8 @@
 				462D06F01C387C9C001C1D98 /* rummikubTests.swift in Sources */,
 				462D07131C38B05B001C1D98 /* Pile.swift in Sources */,
 				462D07181C38B0B5001C1D98 /* GameManager.swift in Sources */,
+				460B13401C3A08E200E52783 /* CombinationsTests.swift in Sources */,
+				460B133C1C3A083F00E52783 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +371,7 @@
 				462D06FB1C387C9C001C1D98 /* rummikubUITests.swift in Sources */,
 				462D07141C38B05B001C1D98 /* Pile.swift in Sources */,
 				462D07191C38B0B5001C1D98 /* GameManager.swift in Sources */,
+				460B133D1C3A083F00E52783 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
