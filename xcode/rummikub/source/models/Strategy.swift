@@ -10,6 +10,7 @@ import Foundation
 
 protocol Strategy {
   func findGroups(tiles:[Tile]) -> [TileGroup]
+  func solve(tiles:[Tile]) -> TileGroupPlay
 }
 
 /**
@@ -20,6 +21,8 @@ protocol Strategy {
 class BasicStrategy : Strategy {
   
   /**
+   
+   TODO: we should return all possible combinations? or just the best?
    
    @return An array of Playable 'TileGroup'
    
@@ -35,11 +38,15 @@ class BasicStrategy : Strategy {
       tileGroups[tile.value] = counter
     }
     
-    return tileGroups
-      // groups of three or larger
-      .filter { (counter) in
-        counter.tiles.count >= 3
-      }
+    // find all combinations of 3 & 4
+    var allCombinations = [TileGroup]()
+    tileGroups.forEach { (group) -> () in
+      allCombinations = allCombinations + combinations(group.tiles).map({ (tiles) -> TileGroup in
+        TileGroup(tiles: tiles)
+      })
+    }
+    
+    let result =  allCombinations
       // check all groups contain MAX one of each color
       .map { (counter) -> TileGroup in
         
@@ -64,7 +71,19 @@ class BasicStrategy : Strategy {
         
         return tmpCounter
         
+      }
+      // groups of three or 4 only
+      .filter { (counter) in
+        counter.tiles.count == 3 ||
+          counter.tiles.count == 4
     }
+    //.sort { $0.score > $1.score }
+    
+    let sortedResult = result.sort { (group1, group2) -> Bool in
+      group1.score > group2.score
+    }
+    
+    return sortedResult
     
   }
   
@@ -72,21 +91,37 @@ class BasicStrategy : Strategy {
   
   /**
    
-   Find a solution, if nothing can be found, return nil
-   @return 'TileGroupPlay' if valid solution found otherwise nil
+   Find solution
    
    */
-  func solve(tiles:[Tile]) -> TileGroupPlay? {
-   
-    let groups = findGroups(tiles)
+  func solve(tiles:[Tile]) -> TileGroupPlay {
     
-    let all = groups
+    // combine groups + runs
+    let all = findGroups(tiles)
+    // TODO: runs
     
-    let result = all.filter({ (group) -> Bool in
+    var playedTiles = Set<Tile>()
+    return all.reduce(TileGroupPlay(groups:[])) { (play, group) -> TileGroupPlay in
       
-    })
-    
-    return nil
+      var tmpPlay = play
+      
+      // check if we've played any tile in the group already
+      let contains = group.tiles.reduce(false, combine: { (result, tile) -> Bool in
+        result || playedTiles.contains(tile)
+      })
+      
+      // only append the group to the solution
+      // if we haven't already played the tile
+      if !contains {
+        tmpPlay.groups.append(group)
+        for tile in group.tiles {
+          playedTiles.insert(tile)
+        }
+        
+      }
+      
+      return tmpPlay
+    }
     
   }
   

@@ -16,11 +16,12 @@ enum TileColor : String {
   case Orange = "O"
 }
 
-struct Tile : CustomStringConvertible, Equatable {
+struct Tile : CustomStringConvertible, Equatable, Hashable {
   let id:Int
   let color:TileColor
   let value:Int
   var description: String {return "\(color.rawValue)\(value)"}
+  var hashValue: Int { return id }
 }
 func == (lhs: Tile, rhs: Tile) -> Bool {
   return lhs.id == rhs.id

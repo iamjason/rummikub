@@ -10,7 +10,7 @@ import Foundation
 
 struct TileGroupPlay : CustomStringConvertible {
   
-  let groups:[TileGroup]
+  var groups:[TileGroup]
   
   // total number to tiles in the play
   var totalTiles:Int {
