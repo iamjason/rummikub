@@ -43,24 +43,26 @@ class BasicStrategy : Strategy {
       // check all groups contain MAX one of each color
       .map { (counter) -> TileGroup in
         
-        if let tile = counter.tiles.first {
-          let color = tile.color
-          let colorsTile = counter.tiles.filter({ (tile) -> Bool in
-            tile.color == color
+        var tmpCounter = counter
+        
+        for tile in counter.tiles {
+          
+          let colorsTile = counter.tiles.filter({ (localTile) -> Bool in
+            localTile.color == tile.color
           })
           
           if colorsTile.count > 1 {
             // TODO: for now... just remove the first element, let's assume we have a sorted array?
             // eventually take max value tile
             if let duplicateColor = colorsTile.first {
-              var tmpCounter = counter
               tmpCounter.removeTile(duplicateColor)
               return tmpCounter
             }
           }
+          
         }
         
-        return counter
+        return tmpCounter
         
     }
     

@@ -18,7 +18,8 @@ struct TestTiles {
   ]
   
   
-  // - MARK: groups of 4
+  
+  // - MARK: edge/invalid cases
   
   let onesGroupOf4_invalid_two_red_tiles =
   [
@@ -29,6 +30,16 @@ struct TestTiles {
   ]
   
   
+  let twosGroupOf4_invalid_two_red_tiles =
+  [
+    Tile(id:1, color: .Red, value:2),
+    Tile(id:2, color: .Blue, value:2),
+    Tile(id:3, color: .Orange, value:2),
+    Tile(id:4, color: .Red, value:2)
+  ]
+  
+  
+  // - MARK: groups of 4
   let onesGroupOf4 =
   [
     Tile(id:1, color: .Red, value:1),
