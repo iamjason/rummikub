@@ -46,6 +46,7 @@ class BasicStrategyTests: XCTestCase {
     let strategy = BasicStrategy()
     let tiles = t.onesGroupOf4_invalid_two_red_tiles
     let play = TileGroupPlay(groups:strategy.findGroups(tiles))
+    
     XCTAssertEqual(play.score, 3, "play is worth 3 points")
     XCTAssertEqual(play.totalTiles, 3, "play shoul have 3 tiles")
     
@@ -59,6 +60,7 @@ class BasicStrategyTests: XCTestCase {
     // in two reds are unplayable here
     let tiles = t.onesGroupOf4_invalid_two_red_tiles + t.twosGroupOf4_invalid_two_red_tiles
     let play = TileGroupPlay(groups:strategy.findGroups(tiles))
+    
     XCTAssertEqual(play.score, 9, "duplicate wasn't removed properly")
     XCTAssertEqual(play.totalTiles, 6, "duplicate wasn't removed properly")
     

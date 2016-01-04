@@ -68,4 +68,26 @@ class BasicStrategy : Strategy {
     
   }
   
+  
+  
+  /**
+   
+   Find a solution, if nothing can be found, return nil
+   @return 'TileGroupPlay' if valid solution found otherwise nil
+   
+   */
+  func solve(tiles:[Tile]) -> TileGroupPlay? {
+   
+    let groups = findGroups(tiles)
+    
+    let all = groups
+    
+    let result = all.filter({ (group) -> Bool in
+      
+    })
+    
+    return nil
+    
+  }
+  
 }
