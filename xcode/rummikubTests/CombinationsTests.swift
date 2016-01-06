@@ -10,7 +10,7 @@ import XCTest
 
 class CombinationsTests: XCTestCase {
   
-  func testCombinationsWithSizeSimpleIntegerCase() {
+  func _testCombinationsWithSizeSimpleIntegerCase() {
     
     let array = [1,2,3]
     let result = combinationsOfSize(array, k: 2)
@@ -21,7 +21,7 @@ class CombinationsTests: XCTestCase {
   }
   
   
-  func testAllCombinationsSimpleIntegerCase() {
+  func _testAllCombinationsSimpleIntegerCase() {
     
     let array = [1,2,3]
     let result = combinations(array)

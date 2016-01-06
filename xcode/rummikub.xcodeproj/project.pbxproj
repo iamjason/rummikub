@@ -16,6 +16,16 @@
 		460B13451C3B296600E52783 /* Runs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13431C3B296600E52783 /* Runs.swift */; };
 		460B13461C3B296600E52783 /* Runs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13431C3B296600E52783 /* Runs.swift */; };
 		460B13481C3B298B00E52783 /* RunsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13471C3B298B00E52783 /* RunsTests.swift */; };
+		460B134A1C3C7D3300E52783 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13491C3C7D3300E52783 /* Player.swift */; };
+		460B134B1C3C7D3300E52783 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13491C3C7D3300E52783 /* Player.swift */; };
+		460B134C1C3C7D3300E52783 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13491C3C7D3300E52783 /* Player.swift */; };
+		460B13521C3C7F0200E52783 /* GameManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13511C3C7F0200E52783 /* GameManagerTests.swift */; };
+		460B13551C3C841800E52783 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13531C3C841800E52783 /* GameManager.swift */; };
+		460B13561C3C841800E52783 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13531C3C841800E52783 /* GameManager.swift */; };
+		460B13571C3C841800E52783 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13531C3C841800E52783 /* GameManager.swift */; };
+		460B13581C3C841800E52783 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13541C3C841800E52783 /* Strategy.swift */; };
+		460B13591C3C841800E52783 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13541C3C841800E52783 /* Strategy.swift */; };
+		460B135A1C3C841800E52783 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B13541C3C841800E52783 /* Strategy.swift */; };
 		462D06DB1C387C9C001C1D98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D06DA1C387C9C001C1D98 /* AppDelegate.swift */; };
 		462D06DD1C387C9C001C1D98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D06DC1C387C9C001C1D98 /* ViewController.swift */; };
 		462D06E01C387C9C001C1D98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462D06DE1C387C9C001C1D98 /* Main.storyboard */; };
@@ -32,18 +42,12 @@
 		462D07121C38B05B001C1D98 /* Pile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D07111C38B05B001C1D98 /* Pile.swift */; };
 		462D07131C38B05B001C1D98 /* Pile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D07111C38B05B001C1D98 /* Pile.swift */; };
 		462D07141C38B05B001C1D98 /* Pile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D07111C38B05B001C1D98 /* Pile.swift */; };
-		462D07171C38B0B5001C1D98 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D07161C38B0B5001C1D98 /* GameManager.swift */; };
-		462D07181C38B0B5001C1D98 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D07161C38B0B5001C1D98 /* GameManager.swift */; };
-		462D07191C38B0B5001C1D98 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D07161C38B0B5001C1D98 /* GameManager.swift */; };
 		462D071B1C38E734001C1D98 /* TileGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D071A1C38E734001C1D98 /* TileGroup.swift */; };
 		462D071C1C38E734001C1D98 /* TileGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D071A1C38E734001C1D98 /* TileGroup.swift */; };
 		462D071D1C38E734001C1D98 /* TileGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D071A1C38E734001C1D98 /* TileGroup.swift */; };
 		462D071F1C39DA76001C1D98 /* TileGroupPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D071E1C39DA76001C1D98 /* TileGroupPlay.swift */; };
 		462D07201C39DA76001C1D98 /* TileGroupPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D071E1C39DA76001C1D98 /* TileGroupPlay.swift */; };
 		462D07211C39DA76001C1D98 /* TileGroupPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D071E1C39DA76001C1D98 /* TileGroupPlay.swift */; };
-		462D07231C39DD36001C1D98 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D07221C39DD36001C1D98 /* Strategy.swift */; };
-		462D07241C39DD36001C1D98 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D07221C39DD36001C1D98 /* Strategy.swift */; };
-		462D07251C39DD36001C1D98 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462D07221C39DD36001C1D98 /* Strategy.swift */; };
 		4634F1271C39EDCE00E067D8 /* TestTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4634F1261C39EDCE00E067D8 /* TestTiles.swift */; };
 		4634F1281C39EDCE00E067D8 /* TestTiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4634F1261C39EDCE00E067D8 /* TestTiles.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +75,10 @@
 		460B13411C3A132600E52783 /* BasicStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicStrategyTests.swift; sourceTree = "<group>"; };
 		460B13431C3B296600E52783 /* Runs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Runs.swift; path = source/utilities/Runs.swift; sourceTree = "<group>"; };
 		460B13471C3B298B00E52783 /* RunsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunsTests.swift; sourceTree = "<group>"; };
+		460B13491C3C7D3300E52783 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = source/models/Player.swift; sourceTree = "<group>"; };
+		460B13511C3C7F0200E52783 /* GameManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManagerTests.swift; sourceTree = "<group>"; };
+		460B13531C3C841800E52783 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameManager.swift; path = source/utilities/GameManager.swift; sourceTree = "<group>"; };
+		460B13541C3C841800E52783 /* Strategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strategy.swift; path = source/utilities/Strategy.swift; sourceTree = "<group>"; };
 		462D06D71C387C9C001C1D98 /* rummikub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rummikub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462D06DA1C387C9C001C1D98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		462D06DC1C387C9C001C1D98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,10 +95,8 @@
 		462D07081C388011001C1D98 /* Rack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rack.swift; path = source/models/Rack.swift; sourceTree = "<group>"; };
 		462D070C1C388D37001C1D98 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = source/models/Tile.swift; sourceTree = "<group>"; };
 		462D07111C38B05B001C1D98 /* Pile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pile.swift; path = source/models/Pile.swift; sourceTree = "<group>"; };
-		462D07161C38B0B5001C1D98 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameManager.swift; path = source/GameManager.swift; sourceTree = "<group>"; };
 		462D071A1C38E734001C1D98 /* TileGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TileGroup.swift; path = source/models/TileGroup.swift; sourceTree = "<group>"; };
 		462D071E1C39DA76001C1D98 /* TileGroupPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TileGroupPlay.swift; path = source/models/TileGroupPlay.swift; sourceTree = "<group>"; };
-		462D07221C39DD36001C1D98 /* Strategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strategy.swift; path = source/models/Strategy.swift; sourceTree = "<group>"; };
 		4634F1261C39EDCE00E067D8 /* TestTiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTiles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +128,8 @@
 		460B133E1C3A084A00E52783 /* utilties */ = {
 			isa = PBXGroup;
 			children = (
-				462D07161C38B0B5001C1D98 /* GameManager.swift */,
+				460B13531C3C841800E52783 /* GameManager.swift */,
+				460B13541C3C841800E52783 /* Strategy.swift */,
 				460B133A1C3A083F00E52783 /* Combinations.swift */,
 				460B13431C3B296600E52783 /* Runs.swift */,
 			);
@@ -172,8 +179,9 @@
 				460B13411C3A132600E52783 /* BasicStrategyTests.swift */,
 				462D06EF1C387C9C001C1D98 /* rummikubTests.swift */,
 				460B133F1C3A08E200E52783 /* CombinationsTests.swift */,
-				462D06F11C387C9C001C1D98 /* Info.plist */,
 				460B13471C3B298B00E52783 /* RunsTests.swift */,
+				462D06F11C387C9C001C1D98 /* Info.plist */,
+				460B13511C3C7F0200E52783 /* GameManagerTests.swift */,
 			);
 			path = rummikubTests;
 			sourceTree = "<group>";
@@ -195,7 +203,7 @@
 				462D07111C38B05B001C1D98 /* Pile.swift */,
 				462D071A1C38E734001C1D98 /* TileGroup.swift */,
 				462D071E1C39DA76001C1D98 /* TileGroupPlay.swift */,
-				462D07221C39DD36001C1D98 /* Strategy.swift */,
+				460B13491C3C7D3300E52783 /* Player.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -339,16 +347,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				462D06DD1C387C9C001C1D98 /* ViewController.swift in Sources */,
-				462D07171C38B0B5001C1D98 /* GameManager.swift in Sources */,
 				462D071B1C38E734001C1D98 /* TileGroup.swift in Sources */,
 				460B13441C3B296600E52783 /* Runs.swift in Sources */,
+				460B134A1C3C7D3300E52783 /* Player.swift in Sources */,
 				462D07091C388011001C1D98 /* Rack.swift in Sources */,
 				462D06DB1C387C9C001C1D98 /* AppDelegate.swift in Sources */,
-				462D07231C39DD36001C1D98 /* Strategy.swift in Sources */,
 				462D07121C38B05B001C1D98 /* Pile.swift in Sources */,
 				462D070D1C388D37001C1D98 /* Tile.swift in Sources */,
+				460B13581C3C841800E52783 /* Strategy.swift in Sources */,
 				462D071F1C39DA76001C1D98 /* TileGroupPlay.swift in Sources */,
 				460B133B1C3A083F00E52783 /* Combinations.swift in Sources */,
+				460B13551C3C841800E52783 /* GameManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460B13561C3C841800E52783 /* GameManager.swift in Sources */,
 				462D07201C39DA76001C1D98 /* TileGroupPlay.swift in Sources */,
 				462D070E1C388D37001C1D98 /* Tile.swift in Sources */,
 				462D071C1C38E734001C1D98 /* TileGroup.swift in Sources */,
@@ -363,12 +373,13 @@
 				4634F1271C39EDCE00E067D8 /* TestTiles.swift in Sources */,
 				460B13481C3B298B00E52783 /* RunsTests.swift in Sources */,
 				462D070A1C388011001C1D98 /* Rack.swift in Sources */,
-				462D07241C39DD36001C1D98 /* Strategy.swift in Sources */,
 				462D06F01C387C9C001C1D98 /* rummikubTests.swift in Sources */,
+				460B13521C3C7F0200E52783 /* GameManagerTests.swift in Sources */,
 				460B13421C3A132600E52783 /* BasicStrategyTests.swift in Sources */,
 				462D07131C38B05B001C1D98 /* Pile.swift in Sources */,
-				462D07181C38B0B5001C1D98 /* GameManager.swift in Sources */,
+				460B13591C3C841800E52783 /* Strategy.swift in Sources */,
 				460B13401C3A08E200E52783 /* CombinationsTests.swift in Sources */,
+				460B134B1C3C7D3300E52783 /* Player.swift in Sources */,
 				460B133C1C3A083F00E52783 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,13 +392,14 @@
 				462D070F1C388D37001C1D98 /* Tile.swift in Sources */,
 				462D071D1C38E734001C1D98 /* TileGroup.swift in Sources */,
 				460B13461C3B296600E52783 /* Runs.swift in Sources */,
+				460B134C1C3C7D3300E52783 /* Player.swift in Sources */,
 				4634F1281C39EDCE00E067D8 /* TestTiles.swift in Sources */,
 				462D070B1C388011001C1D98 /* Rack.swift in Sources */,
-				462D07251C39DD36001C1D98 /* Strategy.swift in Sources */,
 				462D06FB1C387C9C001C1D98 /* rummikubUITests.swift in Sources */,
 				462D07141C38B05B001C1D98 /* Pile.swift in Sources */,
-				462D07191C38B0B5001C1D98 /* GameManager.swift in Sources */,
+				460B135A1C3C841800E52783 /* Strategy.swift in Sources */,
 				460B133D1C3A083F00E52783 /* Combinations.swift in Sources */,
+				460B13571C3C841800E52783 /* GameManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

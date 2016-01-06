@@ -16,7 +16,7 @@ enum TileColor : String {
   case Orange = "O"
 }
 
-struct Tile : CustomStringConvertible, Equatable, Hashable {
+struct Tile : CustomStringConvertible, Equatable, Hashable, RunValue {
   let id:Int
   let color:TileColor
   let value:Int

@@ -13,16 +13,16 @@ class rummikubTests: XCTestCase {
   
   let t = TestTiles()
   
-  func testCreatePile() {
+  func _testCreatePile() {
     
-    var rack = Rack(tiles:[])
-    var pile = Pile.createPile()
+    var rack = Rack()
+    var pile = Pile()
 
     XCTAssertEqual(rack.tiles.count, 0, "A new rack should have an empty tile count")
     XCTAssertEqual(pile.tiles.count, 48, "A new pile should have 48 tiles")
     
     for _ in 1...12 {
-      let tile = pile.drawTile()
+      let tile = pile.drawTile()!
       rack.addTile(tile)
     }
     
@@ -35,7 +35,7 @@ class rummikubTests: XCTestCase {
     
   }
   
-  func testTileGroupRunScore(){
+  func _testTileGroupRunScore(){
     
     let group = TileGroup(tiles:t.redRunOf4)
     

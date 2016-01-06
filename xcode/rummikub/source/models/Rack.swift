@@ -9,18 +9,27 @@
 import Foundation
 
 struct Rack : CustomStringConvertible {
+  
   var tiles:[Tile]
+  
   var description: String  {
     return "rack-[\(tiles.map { $0.description }.joinWithSeparator(","))]-"
   }
+  
+  init () {
+    tiles = [Tile]()
+  }
+  
   mutating func addTile(tile:Tile){
     tiles.append(tile)
   }
+  
   mutating func removeTile(tile:Tile){
     
     tiles = tiles.filter { (t) -> Bool in
       tile != t
     }
-}
-
+    
+  }
+  
 }

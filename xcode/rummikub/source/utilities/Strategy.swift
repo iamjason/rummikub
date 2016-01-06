@@ -10,6 +10,7 @@ import Foundation
 
 protocol Strategy {
   func findGroups(tiles:[Tile]) -> [TileGroup]
+  func findAllRuns(objects:[Tile]) -> [TileGroup]
   func solve(tiles:[Tile]) -> TileGroupPlay
 }
 
@@ -20,19 +21,93 @@ protocol Strategy {
  */
 class BasicStrategy : Strategy {
   
+  
+  
   /**
    
-   TODO: we should return all possible combinations? or just the best?
+   Find all run combinations
    
-   @return An array of Playable 'TileGroup'
+   */
+  func findAllRuns(objects:[Tile]) -> [TileGroup] {
+    
+    
+    var results = [TileGroup]()
+    TileColor.colors.forEach { (color) in
+      
+      let filteredByColor = objects
+        .filter { $0.color == color }
+        .sort{ $0.value < $1.value }
+    
+      //print("filteredByColor: \(filteredByColor)")
+      
+      
+      let allCombos = combinations(filteredByColor)
+        .filter { (tiles) in
+          tiles.count >= 3
+        }
+        .filter { (tiles) in
+          
+          var tmp = Set<Int>()
+          for tile in tiles {
+            if !tmp.contains(tile.value) {
+              tmp.insert(tile.value)
+            } else {
+              return false
+            }
+          }
+          return true
+        }
+        .map{ (tiles) in
+          TileGroup(tiles:tiles)
+        }
+      
+      results = results + allCombos
+      
+    }
+    
+//    let filteredResults = results
+//      .map { (group) -> TileGroup in
+//        let  t = runs(group.tiles)
+//        
+//      }
+
+    
+    var finalResult = [TileGroup]()
+    for r in results {
+      
+
+      let t = runs(r.tiles)
+      let isValid = t.count > 0
+      //print("result: \(r.tiles) valid:\(isValid): \(t)")
+      if isValid {
+        finalResult.append(TileGroup(tiles: r.tiles))
+      }
+      
+    }
+    
+    
+    
+    return finalResult.sort({ (g1, g2) -> Bool in
+      g1.score > g2.score
+    })
+    
+    
+    
+  }
+  
+  
+  /**
+   
+   @return An array of all possible playable combinations of 'TileGroup's
    
    */
   func findGroups(tiles:[Tile]) -> [TileGroup] {
     
-    var tileGroups = [TileGroup](count: 12, repeatedValue: TileGroup(tiles:[]))
+    var tileGroups = [TileGroup](count: 14, repeatedValue: TileGroup(tiles:[]))
     
     // count all the values and add tiles to tile group
     for tile in tiles {
+      //print(">>> \(tile) - \(tile.value)" )
       var counter = tileGroups[tile.value]
       counter.tiles.append(tile)
       tileGroups[tile.value] = counter
@@ -51,7 +126,6 @@ class BasicStrategy : Strategy {
       .map { (counter) -> TileGroup in
         
         var tmpCounter = counter
-        
         for tile in counter.tiles {
           
           let colorsTile = counter.tiles.filter({ (localTile) -> Bool in
@@ -76,14 +150,11 @@ class BasicStrategy : Strategy {
       .filter { (counter) in
         counter.tiles.count == 3 ||
           counter.tiles.count == 4
-    }
-    //.sort { $0.score > $1.score }
+      }
     
-    let sortedResult = result.sort { (group1, group2) -> Bool in
-      group1.score > group2.score
-    }
-    
-    return sortedResult
+      return result.sort { (group1, group2) -> Bool in
+        group1.score > group2.score
+      }
     
   }
   
@@ -97,8 +168,8 @@ class BasicStrategy : Strategy {
   func solve(tiles:[Tile]) -> TileGroupPlay {
     
     // combine groups + runs
-    let all = findGroups(tiles)
-    // TODO: runs
+    let all = findAllRuns(tiles) + findGroups(tiles)
+    
     
     var playedTiles = Set<Tile>()
     return all.reduce(TileGroupPlay(groups:[])) { (play, group) -> TileGroupPlay in
