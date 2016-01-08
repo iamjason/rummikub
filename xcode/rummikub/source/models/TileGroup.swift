@@ -7,8 +7,11 @@
 //
 
 import Foundation
+protocol TileGroupProtocol {
+  var tiles:[Tile] { get set }
+}
 
-struct TileGroup : CustomStringConvertible {
+struct TileGroup : TileGroupProtocol, CustomStringConvertible {
   
   var tiles:[Tile]
   
@@ -27,11 +30,9 @@ struct TileGroup : CustomStringConvertible {
   }
   
   mutating func removeTile(tile:Tile){
-    
     tiles = tiles.filter { (t) -> Bool in
       tile != t
     }
-    
   }
   
 }

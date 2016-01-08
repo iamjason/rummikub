@@ -31,14 +31,18 @@ class TestGameManager : GameManager {
     printPlayersRacks()
     
     var foundWinner = false
-    while !foundWinner {
-    // play 20 hands see if we find a winner
-    //for _ in 1...2 {
+//    while !foundWinner {
+//     play 20 hands see if we find a winner
+    for i in 1...4 {
     
+      print("-------turn:\(i)-------------------")
+      printPlayersRacks()
+      
       players = players.map({ (player) -> Player in
         
         var tPlayer = player
         
+        print("\(tPlayer.name)")
         let solution:TileGroupPlay = tPlayer.strategy.solve(tPlayer.rack.tiles)
      
         // TODO: have a count of tiles _NOT_ already on the board,

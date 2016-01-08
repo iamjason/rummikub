@@ -12,7 +12,7 @@ class BasicStrategyTests: XCTestCase {
   
   let t = TestTiles()
   //
-  func _testNonConsecutiveRuns(){
+  func testNonConsecutiveRuns(){
     //    [R1, R2, R3, R4, R7, R9, R10]
     
     let tiles =
@@ -27,27 +27,18 @@ class BasicStrategyTests: XCTestCase {
     ]
     
     let strategy = BasicStrategy()
-    let allComos = strategy.findAllRuns(tiles)
-    
-    for r in allComos {
-      
-      
-      let t = runs(r.tiles)
-      let isValid = t.count > 0
-      print("result: \(r.tiles) valid:\(isValid): \(t)")
-      
+    let allComos = strategy.solve(tiles)
+
+    let result = allComos.groups.reduce(true) { (result, group) -> Bool in
+      result && isValidRun(group.tiles)
     }
-//    let solution = runs(allComos)
-//    
-//    let isValid = solution.count > 0
-//    print("result: \(solution.tiles) valid:\(isValid): \(solution)")
     
-    
+    XCTAssertEqual(result, true, "all solutions should be valid runs")
     
   }
   
   // - MARK: RUNS + SETS
-  func _testFindSetsAndRuns(){
+  func testFindSetsAndRuns(){
     
     let strategy = BasicStrategy()
     
@@ -64,7 +55,7 @@ class BasicStrategyTests: XCTestCase {
   
   
   // - MARK: RUNS
-  func _testRunCombination() {
+  func testRunCombination() {
     
     let s = BasicStrategy()
     
@@ -74,7 +65,7 @@ class BasicStrategyTests: XCTestCase {
     
   }
   
-  func _testSolveRunCombination() {
+  func testSolveRunCombination() {
     
     let s = BasicStrategy()
     
@@ -86,7 +77,7 @@ class BasicStrategyTests: XCTestCase {
   }
   
   // - MARK: GROUPS
-  func _testTileStrategyFindGroups(){
+  func testTileStrategyFindGroups(){
     
     let strategy = BasicStrategy()
     let tile = [Tile(id: 1000, color: .Red, value: 10)]
@@ -103,7 +94,7 @@ class BasicStrategyTests: XCTestCase {
     
   }
   
-  func _testTileStrategyFindGroupsAdvanced(){
+  func testTileStrategyFindGroupsAdvanced(){
     
     let strategy = BasicStrategy()
     let tiles = t.threesGroupOf4 + t.foursGroupOf3 + [Tile(id: 1000, color: .Red, value: 10)]
@@ -115,7 +106,7 @@ class BasicStrategyTests: XCTestCase {
   }
   
   // one color has a duplicate
-  func _testFindGroupsMultipleColorsInSetBasic(){
+  func testFindGroupsMultipleColorsInSetBasic(){
     
     let strategy = BasicStrategy()
     let tiles = t.onesGroupOf4_invalid_two_red_tiles
@@ -127,7 +118,7 @@ class BasicStrategyTests: XCTestCase {
   }
   
   // multiple sets have duplicate colors
-  func _testFindGroupsMultipleColorsInSetAdvanced(){
+  func testFindGroupsMultipleColorsInSetAdvanced(){
     
     let strategy = BasicStrategy()
     
@@ -141,7 +132,7 @@ class BasicStrategyTests: XCTestCase {
   }
   
   // multiple sets of same number
-  func _testFindMultipleOfSameNumber(){
+  func testFindMultipleOfSameNumber(){
     
     let strategy = BasicStrategy()
     

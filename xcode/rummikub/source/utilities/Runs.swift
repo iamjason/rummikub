@@ -12,42 +12,45 @@ protocol RunValue {
   var value:Int { get }
 }
 
-func runs<T:RunValue>( array:[T] ) -> [[T]] {
-  
-  var result = [[T]]()
-
-  for var i = 0; i < array.count; i++ {
-    
-    var ii = i + 1
-    while ii < array.count {
-
-      
-      let v1 = array[ii - 1].value
-      let v2 = array[ii].value - 1
-      //print("\(i)--- \(v1) - \(v2)")
-      // because the generic type conforms to our 
-      if v1 == v2 {
-        
-        // runs of three or greater are accepted
-        if ii - i + 1 >= 3 {
-          result.append(Array(array[i...ii]))
-        }
-        
-        ii = ii + 1
-        
-      } else {
-        break;
-      }
-
-      
-    
-      
-      
+func min<T:RunValue>(array:[T]) -> Int {
+  return array.reduce(Int.max) { (result, value) -> Int in
+    if value.value < result {
+      return value.value
     }
+    return result
+  }
+}
+
+func max<T:RunValue>(array:[T]) -> Int {
+  return  array.reduce(0) { (result, value) -> Int in
+    if value.value > result {
+      return value.value
+    }
+    return result
+  }
+}
+
+func isValidRun<T:RunValue>( array:[T] ) -> Bool {
+  
+  let minValue = min(array)
+  let maxValue = max(array)
+  
+  if maxValue - minValue + 1 == array.count {
+    
+    var visited = Set<Int>()
+    for var i = 0; i < array.count; i++ {
+      
+      if visited.contains(array[i].value) == true {
+        return false
+      }
+      
+      visited.insert(array[i].value)
+    }
+    
+    return true
     
   }
   
-  return result
+  return false
   
 }
-

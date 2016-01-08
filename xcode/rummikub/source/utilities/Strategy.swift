@@ -65,33 +65,17 @@ class BasicStrategy : Strategy {
       
     }
     
-//    let filteredResults = results
-//      .map { (group) -> TileGroup in
-//        let  t = runs(group.tiles)
-//        
-//      }
-
-    
     var finalResult = [TileGroup]()
     for r in results {
-      
-
-      let t = runs(r.tiles)
-      let isValid = t.count > 0
-      //print("result: \(r.tiles) valid:\(isValid): \(t)")
-      if isValid {
+      if isValidRun(r.tiles) {
         finalResult.append(TileGroup(tiles: r.tiles))
       }
       
     }
     
-    
-    
     return finalResult.sort({ (g1, g2) -> Bool in
       g1.score > g2.score
     })
-    
-    
     
   }
   
@@ -126,20 +110,14 @@ class BasicStrategy : Strategy {
       .map { (counter) -> TileGroup in
         
         var tmpCounter = counter
+        var visitedColors = Set<TileColor>()
         for tile in counter.tiles {
-          
-          let colorsTile = counter.tiles.filter({ (localTile) -> Bool in
-            localTile.color == tile.color
-          })
-          
-          if colorsTile.count > 1 {
-            // TODO: for now... just remove the first element, let's assume we have a sorted array?
-            // eventually take max value tile
-            if let duplicateColor = colorsTile.first {
-              tmpCounter.removeTile(duplicateColor)
-              return tmpCounter
-            }
+
+          if visitedColors.contains(tile.color) {
+            tmpCounter.removeTile(tile)
           }
+          
+          visitedColors.insert(tile.color)
           
         }
         
